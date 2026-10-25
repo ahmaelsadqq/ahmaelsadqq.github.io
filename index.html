@@ -1,0 +1,323 @@
+<title>Dr.Ahmed EL-SadQQ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: clinic-chart story — symptoms → diagnosis → treatment plan → results — on a bright mint ground with one coral highlight */
+:root {
+  --bg: #F5FBFA;
+  --surface: #FFFFFF;
+  --ink: #10243B;
+  --muted: #4F6378;
+  --line: #DCEAE7;
+  --teal: #0A8F80;
+  --teal-soft: #DDF4F0;
+  --coral: #FF6F4F;
+  --coral-soft: #FFE6DE;
+  --sun: #FFC94D;
+  --sun-soft: #FFF4D6;
+  --wa: #11994B;
+  --wa-hover: #0C823F;
+  --font-display: "Readex Pro", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --radius: 18px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.75; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--surface); }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.35; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.latin { font-family: var(--font-display); direction: ltr; unicode-bidi: isolate; }
+
+/* WhatsApp button */
+.btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--wa); color: #FFFFFF; text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 1.08rem; padding: 14px 26px; border-radius: 999px; box-shadow: 0 8px 22px rgba(17, 153, 75, .28); transition: background .2s, transform .2s; }
+.btn-wa:hover { background: var(--wa-hover); transform: translateY(-2px); }
+.btn-wa:focus-visible, a:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+.btn-wa svg { width: 24px; height: 24px; flex: none; fill: currentColor; }
+.btn-wa.small { padding: 9px 18px; font-size: .95rem; box-shadow: none; }
+.btn-wa.big { font-size: 1.2rem; padding: 17px 32px; }
+
+/* Header */
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(255, 255, 255, .92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-decoration: none; direction: ltr; }
+.brand span { color: var(--teal); }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; background:
+  radial-gradient(520px 380px at 88% 10%, var(--teal-soft), transparent 70%),
+  radial-gradient(420px 320px at 8% 90%, var(--sun-soft), transparent 70%),
+  radial-gradient(360px 300px at 40% 0%, var(--coral-soft), transparent 70%), var(--bg); }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; padding-block: 56px 64px; }
+.hero-text { min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+.tag { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--teal); font-weight: 600; font-size: .92rem; padding: 6px 14px; border-radius: 999px; }
+.tag i { width: 8px; height: 8px; border-radius: 50%; background: var(--wa); display: block; }
+.hero h1 { font-size: clamp(2rem, 4.6vw, 3.25rem); font-weight: 700; }
+.hero h1 mark { background: linear-gradient(transparent 58%, var(--sun) 58%); color: inherit; padding: 0 4px; }
+.hero .lead { font-size: 1.15rem; color: var(--muted); max-width: 58ch; }
+.channels { display: flex; flex-wrap: wrap; gap: 8px; }
+.channels span { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 4px 12px; font-size: .92rem; font-weight: 600; }
+.hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+.hero-cta small { color: var(--muted); font-size: .92rem; }
+
+.portrait { position: relative; justify-self: center; width: min(100%, 380px); }
+.portrait .frame { aspect-ratio: 4 / 5; max-width: 100%; border-radius: 200px 200px 28px 28px; overflow: hidden; border: 8px solid var(--surface); box-shadow: 0 24px 60px rgba(16, 36, 59, .18); background: var(--teal-soft); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+.portrait .badge { position: absolute; background: var(--surface); border-radius: 14px; padding: 10px 14px; box-shadow: 0 12px 30px rgba(16, 36, 59, .14); font-size: .88rem; line-height: 1.4; }
+.portrait .badge b { display: block; font-family: var(--font-display); font-size: 1.35rem; }
+.badge.b1 { inset-inline-start: -18px; bottom: 56px; }
+.badge.b1 b { color: var(--teal); }
+.badge.b2 { inset-inline-end: -14px; top: 40px; }
+.badge.b2 b { color: var(--coral); }
+
+/* Stats strip */
+.stats { background: var(--ink); color: #FFFFFF; }
+.stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding-block: 28px; }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat b { font-family: var(--font-display); font-size: 1.9rem; font-variant-numeric: tabular-nums; color: var(--sun); }
+.stat span { font-size: .95rem; color: #C9D6E2; }
+
+section { padding-block: 72px; }
+.sec-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; max-width: 680px; }
+.eyebrow { color: var(--teal); font-weight: 600; font-size: .95rem; letter-spacing: .02em; }
+.sec-head h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); }
+.sec-head p { color: var(--muted); }
+
+/* Symptoms */
+.symptoms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.symptom { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 8px; }
+.symptom .ico { width: 42px; height: 42px; border-radius: 12px; background: var(--coral-soft); color: var(--coral); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; }
+.symptom h3 { font-size: 1.1rem; }
+.symptom p { color: var(--muted); font-size: .98rem; }
+.diagnosis { margin-top: 26px; background: var(--teal-soft); border-radius: var(--radius); padding: 22px 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.diagnosis p { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; max-width: 60ch; }
+
+/* System steps */
+.system { background: var(--surface); border-block: 1px solid var(--line); }
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: s; list-style: none; padding: 0; margin: 0; }
+.steps li { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 22px 18px; border-radius: var(--radius); background: var(--bg); border: 1px solid var(--line); }
+.steps li::before { counter-increment: s; content: counter(s); font-family: var(--font-display); font-weight: 700; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--teal); color: #FFFFFF; }
+.steps h3 { font-size: 1.05rem; }
+.steps p { color: var(--muted); font-size: .95rem; line-height: 1.65; }
+
+/* Results */
+.results-grid { columns: 3 280px; column-gap: 18px; }
+.shot { break-inside: avoid; margin: 0 0 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 12px; }
+.shot img { display: block; width: 100%; border-radius: 12px; background: var(--bg); }
+.shot figcaption { padding: 0 6px 6px; display: flex; flex-direction: column; gap: 4px; }
+.shot figcaption b { font-family: var(--font-display); font-size: 1.05rem; }
+.shot figcaption span { color: var(--muted); font-size: .93rem; }
+.pill { align-self: flex-start; font-size: .8rem; font-weight: 600; padding: 2px 10px; border-radius: 999px; }
+.pill.sales { background: var(--sun-soft); color: #8A5A00; }
+.pill.msg { background: var(--teal-soft); color: var(--teal); }
+.note { color: var(--muted); font-size: .9rem; margin-top: 6px; }
+
+/* About */
+.about .wrap { display: grid; grid-template-columns: 320px 1fr; gap: 44px; align-items: center; }
+.about-photo { aspect-ratio: 1; max-width: 100%; border-radius: 28px; overflow: hidden; border: 6px solid var(--surface); box-shadow: 0 18px 44px rgba(16, 36, 59, .14); }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
+.about-text { min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.about-text h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); }
+.about-text p { color: var(--muted); max-width: 62ch; }
+.creds { display: flex; flex-wrap: wrap; gap: 10px; }
+.creds div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 16px; line-height: 1.4; }
+.creds b { display: block; font-family: var(--font-display); color: var(--teal); font-size: 1.25rem; }
+.creds span { font-size: .9rem; color: var(--muted); }
+
+/* Final CTA */
+.final { padding-block: 0 80px; }
+.final-box { background: linear-gradient(135deg, var(--teal) 0%, #0D7C8F 100%); color: #FFFFFF; border-radius: 28px; padding: 48px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; position: relative; overflow: hidden; }
+.final-box::after { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; background: var(--sun); opacity: .18; inset-inline-start: -80px; top: -90px; }
+.final-box h2 { font-size: clamp(1.6rem, 3.6vw, 2.4rem); position: relative; }
+.final-box p { color: #DDF4F0; max-width: 56ch; position: relative; }
+.final-box .btn-wa { position: relative; background: #FFFFFF; color: var(--wa); box-shadow: 0 10px 26px rgba(0, 0, 0, .18); }
+.final-box .btn-wa:hover { background: var(--sun-soft); }
+.phone { position: relative; font-family: var(--font-display); font-size: 1.1rem; direction: ltr; user-select: all; background: rgba(255, 255, 255, .14); padding: 4px 14px; border-radius: 10px; }
+
+footer { border-top: 1px solid var(--line); background: var(--surface); }
+footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-block: 22px 96px; color: var(--muted); font-size: .95rem; }
+footer a { color: var(--teal); font-weight: 600; }
+
+/* Floating WhatsApp */
+.fab { position: fixed; z-index: 25; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); inset-inline-start: calc(18px + env(safe-area-inset-left, 0px)); display: inline-flex; align-items: center; gap: 10px; background: var(--wa); color: #FFFFFF; text-decoration: none; font-family: var(--font-display); font-weight: 600; padding: 12px 20px 12px 16px; border-radius: 999px; box-shadow: 0 12px 30px rgba(17, 153, 75, .4); animation: pulse 2.6s ease-in-out infinite; }
+.fab svg { width: 28px; height: 28px; fill: currentColor; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 12px 30px rgba(17, 153, 75, .4), 0 0 0 0 rgba(17, 153, 75, .35); } 50% { box-shadow: 0 12px 30px rgba(17, 153, 75, .4), 0 0 0 12px rgba(17, 153, 75, 0); } }
+
+@media (max-width: 900px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-block: 32px 48px; gap: 36px; }
+  .portrait { order: -1; width: min(82%, 320px); }
+  .stats .wrap { grid-template-columns: repeat(2, 1fr); }
+  .symptoms { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .steps li { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 14px; }
+  .steps li::before { flex: none; }
+  .steps li h3 { flex: 1; min-width: 0; }
+  .steps li p { flex-basis: 100%; }
+  .about .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .about-photo { width: min(100%, 260px); }
+  section { padding-block: 56px; }
+}
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  header .btn-wa.small .lbl { display: none; }
+  .badge.b1 { inset-inline-start: -8px; }
+  .badge.b2 { inset-inline-end: -8px; }
+  .hero-cta .btn-wa { width: 100%; }
+  .fab .lbl { display: none; }
+  .fab { padding: 14px; }
+  .final-box { padding: 36px 20px; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></symbol>
+</svg>
+
+<div dir="rtl" lang="ar">
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Dr.Ahmed <span>EL-SadQQ</span></a>
+    <a class="btn-wa small wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span class="lbl">شخّص عيادتك مجانًا</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="tag"><i></i>تسويق متخصص للعيادات البيطرية</span>
+      <h1>زوّد <mark>حجوزات عيادتك</mark> البيطرية بسيستم إعلانات واضح على فيسبوك وإنستجرام</h1>
+      <p class="lead">أنا دكتور أحمد الصادق، طبيب بيطري. بصمّم وبدير إعلانات Meta لعيادتك عشان توصل لأصحاب الحيوانات الأليفة اللي حواليك فعلًا، وتتحول الرسايل لحجوزات حقيقية.</p>
+      <div class="channels"><span class="latin">Meta</span><span class="latin">Facebook</span><span class="latin">Instagram</span><span>رسايل واتساب وماسنجر</span></div>
+      <div class="hero-cta">
+        <a class="btn-wa big wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>يلا شخّص عيادتك مجانًا</a>
+        <small>كشف مجاني على صفحتك وإعلاناتك، ورد خلال 24 ساعة</small>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="frame"><img src="img/me.webp" alt="دكتور أحمد الصادق"></div>
+      <div class="badge b2"><b>+700</b>محادثة من الإعلانات</div>
+      <div class="badge b1"><b>4 سنين</b>خبرة في العيادات البيطرية</div>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>717</b><span>محادثة رسايل بدأت من الإعلانات</span></div>
+    <div class="stat"><b>1.74 ج.م</b><span>أقل تكلفة للمحادثة الواحدة</span></div>
+    <div class="stat"><b>446</b><span>عملية شراء لمتاجر فاشون أونلاين</span></div>
+    <div class="stat"><b>4 سنين</b><span>شغل جوه العيادات البيطرية</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">الأعراض</span>
+      <h2>لو عيادتك عندها عرض من دول، يبقى محتاجة كشف</h2>
+    </div>
+    <div class="symptoms">
+      <div class="symptom"><div class="ico">!</div><h3>متابعين كتير وحجوزات قليلة</h3><p>الصفحة شغالة والبوستات بتاخد لايكات، بس العيادة مش بتتملي.</p></div>
+      <div class="symptom"><div class="ico">؟</div><h3>رسايل بتسأل عن السعر وتختفي</h3><p>العميل بيسأل "الكشف بكام؟" ومش بيرجع تاني، ومفيش طريقة واضحة تحوّله لحجز.</p></div>
+      <div class="symptom"><div class="ico">ج.م</div><h3>فلوس بتتصرف على "ترويج" من غير نتيجة</h3><p>زرار "ترويج المنشور" بيصرف الميزانية على ناس مش مهتمة ومش في منطقتك.</p></div>
+    </div>
+    <div class="diagnosis">
+      <p>التشخيص في الغالب: الإعلان مش موجّه صح، والرسالة مش بتكلم صاحب الحيوان بلغته.</p>
+      <a class="btn-wa wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>يلا شخّص عيادتك مجانًا</a>
+    </div>
+  </div>
+</section>
+
+<section class="system">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">خطة العلاج</span>
+      <h2>السيستم اللي بشتغل بيه مع عيادتك</h2>
+      <p>خطوات ثابتة وواضحة، وانت عارف كل جنيه راح فين وجاب إيه.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>كشف مجاني</h3><p>بشوف صفحتك وإعلاناتك القديمة والمنطقة اللي بتخدمها، وبقولك المشكلة فين بالظبط.</p></li>
+      <li><h3>العرض والرسالة</h3><p>نحدد الخدمة اللي هنعلن عنها (تطعيمات، كشف، جرومنج...) بعرض يخلّي صاحب الحيوان يتحرك.</p></li>
+      <li><h3>تصميم الإعلان</h3><p>تصميم وكلام إعلان يجذب أصحاب حيوانات حقيقيين، مش لايكات وخلاص.</p></li>
+      <li><h3>استهداف دقيق</h3><p>حملات Meta موجهة لمنطقتك وللمهتمين فعلًا، بتبعت الناس على الواتساب أو الماسنجر مباشرة.</p></li>
+      <li><h3>متابعة وتحسين</h3><p>تقرير بعدد الرسايل وتكلفة كل محادثة، ونطوّر الإعلان اللي شغال ونوقف اللي مش جايب.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">نتائج حقيقية</span>
+      <h2>أرقام من حملات نفّذتها بنفسي</h2>
+      <p>صور مباشرة من مدير الإعلانات في Meta، من غير تعديل على الأرقام.</p>
+    </div>
+    <div class="results-grid">
+      <figure class="shot"><img src="img/3.png" alt="حملة تفاعل: 635 محادثة رسائل بتكلفة 1.74 جنيه للمحادثة" loading="lazy"><figcaption><span class="pill msg">حملة رسايل</span><b>635 محادثة بـ 1.74 ج.م للمحادثة</b><span>إجمالي الصرف 1,102 ج.م في آخر 30 يوم</span></figcaption></figure>
+      <figure class="shot"><img src="img/2.png" alt="حملة مبيعات: 253 عملية شراء بتكلفة 33.37 جنيه" loading="lazy"><figcaption><span class="pill sales">حملة مبيعات · متجر فاشون</span><b>253 عملية شراء</b><span>تكلفة الشراء 33.37 ج.م، والصرف 8,441 ج.م</span></figcaption></figure>
+      <figure class="shot"><img src="img/5.png" alt="أول حملة تفاعل: 82 محادثة بتكلفة 8.44 جنيه" loading="lazy"><figcaption><span class="pill msg">حملة رسايل</span><b>82 محادثة من أول حملة</b><span>8.44 ج.م للمحادثة، والصرف 691 ج.م</span></figcaption></figure>
+      <figure class="shot"><img src="img/1.png" alt="حملة مبيعات: 193 عملية شراء بتكلفة 35.38 جنيه" loading="lazy"><figcaption><span class="pill sales">حملة مبيعات · متجر فاشون</span><b>193 عملية شراء</b><span>تكلفة الشراء 35.38 ج.م، والصرف 6,827 ج.م</span></figcaption></figure>
+      <figure class="shot"><img src="img/4.png" alt="إشعار من Meta: 25 محادثة في يوم واحد بتكلفة 8 جنيه" loading="lazy"><figcaption><span class="pill msg">نتيجة يوم واحد</span><b>25 محادثة يوم الاتنين</b><span>إشعار Meta اليومي: 8 ج.م للمحادثة</span></figcaption></figure>
+    </div>
+    <p class="note">أسماء الحسابات مخفية حفاظًا على خصوصية العملاء.</p>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="about-photo"><img src="img/me.webp" alt="دكتور أحمد الصادق" loading="lazy"></div>
+    <div class="about-text">
+      <span class="eyebrow">مين أنا</span>
+      <h2>دكتور بيطري فاهم العيادة من جوه، ومتخصص في إعلاناتها</h2>
+      <p>أنا دكتور أحمد الصادق، طبيب بيطري، اشتغلت 4 سنين في العيادات البيطرية وعارف صاحب الحيوان بيفكر إزاي، بيقلق من إيه، وإيه اللي بيخليه يختار عيادة دون التانية.</p>
+      <p>من 6 شهور بدأت أشتغل في الإعلانات الممولة، وساعدت مجموعة من العيادات البيطرية تزوّد الحجوزات من خلال إعلانات متصممة صح بتجيب عملاء حقيقيين.</p>
+      <div class="creds">
+        <div><b>4 سنين</b><span>في العيادات البيطرية</span></div>
+        <div><b>6 شهور</b><span>في إعلانات Meta</span></div>
+        <div><b>+700</b><span>محادثة لعملائي</span></div>
+      </div>
+      <div><a class="btn-wa wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>يلا شخّص عيادتك مجانًا</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="final-box">
+      <h2>ابدأ بكشف مجاني لعيادتك النهارده</h2>
+      <p>ابعتلي على الواتساب اسم العيادة ولينك الصفحة، وهرجعلك بتشخيص واضح وخطة إعلانات مناسبة لميزانيتك.</p>
+      <a class="btn-wa big wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>يلا شخّص عيادتك مجانًا</a>
+      <span class="phone">01207712586</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="latin">Dr.Ahmed EL-SadQQ</span>
+    <span>واتساب: <span class="latin" style="user-select:all">01207712586</span> · <a href="https://www.facebook.com/share/1EsUNsmvJ6/" target="_blank" rel="noopener">فيسبوك</a> · <a href="https://www.instagram.com/ahmed_elsadqq/" target="_blank" rel="noopener">إنستجرام</a></span>
+  </div>
+</footer>
+
+<a class="fab wa" href="https://wa.me/201207712586" target="_blank" rel="noopener" aria-label="كلمني على واتساب"><svg><use href="#wa"/></svg><span class="lbl">كلمني واتساب</span></a>
+
+</div>
+
+<script>
+  // Prefill the WhatsApp message on every CTA
+  var msg = "أهلاً دكتور أحمد، عايز أشخّص عيادتي مجانًا";
+  document.querySelectorAll("a.wa").forEach(function (a) {
+    a.href = "https://wa.me/201207712586?text=" + encodeURIComponent(msg);
+  });
+</script>
