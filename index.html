@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dr.Ahmed EL-SadQQ</title>
-<meta name="description" content="دكتور أحمد الصادق: زوّد حجوزات عيادتك البيطرية بإعلانات فيسبوك وإنستجرام. شخّص عيادتك مجانًا على الواتساب.">
+<meta name="description" content="دكتور أحمد الصادق: كل تسويق عيادتك البيطرية في مكان واحد. محتوى وتصميم ومونتاج وموشن جرافيك وإعلانات Meta وجوجل. شخّص عيادتك مجانًا على الواتساب.">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
 <style>
-/* Layout: clinic-chart story — symptoms → diagnosis → treatment plan → results — on a bright mint ground with one coral highlight */
+/* Layout: clinic-chart story — symptoms → one-stop services → treatment plan → results — on a bright mint ground with one coral highlight */
 :root {
   --bg: #F5FBFA;
   --surface: #FFFFFF;
@@ -19,9 +19,10 @@
   --line: #DCEAE7;
   --teal: #0A8F80;
   --teal-soft: #DDF4F0;
-  --coral: #FF6F4F;
+  --coral: #F0603F;
   --coral-soft: #FFE6DE;
   --sun: #FFC94D;
+  --sun-ink: #9A6400;
   --sun-soft: #FFF4D6;
   --wa: #11994B;
   --wa-hover: #0C823F;
@@ -31,17 +32,17 @@
   color-scheme: light;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.75; }
-img { max-width: 100%; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--surface); }
+img { max-width: 100%; }
 a { color: inherit; }
 h1, h2, h3 { font-family: var(--font-display); line-height: 1.35; text-wrap: balance; margin: 0; }
 p { margin: 0; }
 .wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .latin { font-family: var(--font-display); direction: ltr; unicode-bidi: isolate; }
+.i { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 /* WhatsApp button */
 .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--wa); color: #FFFFFF; text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 1.08rem; padding: 14px 26px; border-radius: 999px; box-shadow: 0 8px 22px rgba(17, 153, 75, .28); transition: background .2s, transform .2s; }
@@ -92,7 +93,7 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .stat span { font-size: .95rem; color: #C9D6E2; }
 
 section { padding-block: 72px; }
-.sec-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; max-width: 680px; }
+.sec-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; max-width: 700px; }
 .eyebrow { color: var(--teal); font-weight: 600; font-size: .95rem; letter-spacing: .02em; }
 .sec-head h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); }
 .sec-head p { color: var(--muted); }
@@ -100,11 +101,56 @@ section { padding-block: 72px; }
 /* Symptoms */
 .symptoms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .symptom { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 8px; }
-.symptom .ico { width: 42px; height: 42px; border-radius: 12px; background: var(--coral-soft); color: var(--coral); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; }
+.symptom .ico { width: 44px; height: 44px; border-radius: 12px; background: var(--coral-soft); color: var(--coral); display: grid; place-items: center; }
+.symptom .ico svg { width: 24px; height: 24px; }
 .symptom h3 { font-size: 1.1rem; }
 .symptom p { color: var(--muted); font-size: .98rem; }
 .diagnosis { margin-top: 26px; background: var(--teal-soft); border-radius: var(--radius); padding: 22px 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
 .diagnosis p { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; max-width: 60ch; }
+.diagnosis p span { color: var(--coral); }
+
+/* Services */
+.services { background: var(--surface); border-block: 1px solid var(--line); }
+.svc-group { --g: var(--teal); --g-soft: var(--teal-soft); display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.svc-group.ads { --g: var(--coral); --g-soft: var(--coral-soft); }
+.svc-group.google { --g: var(--sun-ink); --g-soft: var(--sun-soft); }
+.g-label { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; color: var(--g); }
+.g-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.svc-cards { display: grid; gap: 16px; }
+.svc-cards.c4 { grid-template-columns: repeat(4, 1fr); }
+.svc-cards.c2 { grid-template-columns: repeat(2, 1fr); }
+.svc-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; margin-top: 30px; }
+.svc { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 10px; transition: transform .2s, border-color .2s; }
+.svc:hover { transform: translateY(-3px); border-color: var(--g); }
+.svc .ico { width: 46px; height: 46px; border-radius: 14px; background: var(--g-soft); color: var(--g); display: grid; place-items: center; }
+.svc .ico svg { width: 25px; height: 25px; }
+.svc h3 { font-size: 1.08rem; }
+.svc p { color: var(--muted); font-size: .95rem; line-height: 1.65; }
+.svc .latin-sub { font-family: var(--font-display); font-size: .85rem; color: var(--g); direction: ltr; text-align: right; }
+.soon { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; border: 2px dashed var(--line); border-radius: var(--radius); padding: 18px 22px; background: var(--bg); }
+.soon .ico { width: 46px; height: 46px; border-radius: 14px; background: var(--surface); color: var(--muted); display: grid; place-items: center; flex: none; border: 1px solid var(--line); }
+.soon .ico svg { width: 25px; height: 25px; }
+.soon div { flex: 1; min-width: 220px; }
+.soon h3 { font-size: 1.05rem; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.soon h3 em { font-style: normal; font-size: .78rem; font-weight: 600; background: var(--sun); color: var(--ink); padding: 1px 10px; border-radius: 999px; }
+.soon p { color: var(--muted); font-size: .95rem; }
+
+/* Peace of mind */
+.relax .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.relax-text { min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.relax-text h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); }
+.relax-text p { color: var(--muted); max-width: 56ch; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; min-width: 0; }
+.col { border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.col h3 { font-size: 1rem; }
+.col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: .95rem; line-height: 1.55; }
+.col li { display: flex; gap: 8px; }
+.col li::before { flex: none; font-weight: 700; }
+.col.without { background: var(--surface); border: 1px solid var(--line); color: var(--muted); }
+.col.without h3 { color: var(--muted); }
+.col.without li::before { content: "✕"; color: var(--coral); }
+.col.with { background: var(--teal); color: #FFFFFF; box-shadow: 0 16px 36px rgba(10, 143, 128, .25); }
+.col.with li::before { content: "✓"; color: var(--sun); }
 
 /* System steps */
 .system { background: var(--surface); border-block: 1px solid var(--line); }
@@ -122,7 +168,7 @@ section { padding-block: 72px; }
 .shot figcaption b { font-family: var(--font-display); font-size: 1.05rem; }
 .shot figcaption span { color: var(--muted); font-size: .93rem; }
 .pill { align-self: flex-start; font-size: .8rem; font-weight: 600; padding: 2px 10px; border-radius: 999px; }
-.pill.sales { background: var(--sun-soft); color: #8A5A00; }
+.pill.sales { background: var(--sun-soft); color: var(--sun-ink); }
 .pill.msg { background: var(--teal-soft); color: var(--teal); }
 .note { color: var(--muted); font-size: .9rem; margin-top: 6px; }
 
@@ -157,11 +203,16 @@ footer a { color: var(--teal); font-weight: 600; }
 .fab svg { width: 28px; height: 28px; fill: currentColor; }
 @keyframes pulse { 0%, 100% { box-shadow: 0 12px 30px rgba(17, 153, 75, .4), 0 0 0 0 rgba(17, 153, 75, .35); } 50% { box-shadow: 0 12px 30px rgba(17, 153, 75, .4), 0 0 0 12px rgba(17, 153, 75, 0); } }
 
+@media (max-width: 960px) {
+  .svc-cards.c4 { grid-template-columns: repeat(2, 1fr); }
+  .svc-row2 { grid-template-columns: 1fr; }
+}
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: 1fr; padding-block: 32px 48px; gap: 36px; }
   .portrait { order: -1; width: min(82%, 320px); }
   .stats .wrap { grid-template-columns: repeat(2, 1fr); }
   .symptoms { grid-template-columns: 1fr; }
+  .relax .wrap { grid-template-columns: 1fr; gap: 28px; }
   .steps { grid-template-columns: 1fr; }
   .steps li { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 14px; }
   .steps li::before { flex: none; }
@@ -170,6 +221,9 @@ footer a { color: var(--teal); font-weight: 600; }
   .about .wrap { grid-template-columns: 1fr; gap: 28px; }
   .about-photo { width: min(100%, 260px); }
   section { padding-block: 56px; }
+}
+@media (max-width: 560px) {
+  .svc-cards.c4, .svc-cards.c2, .compare { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   body { font-size: 16px; }
@@ -186,10 +240,20 @@ footer a { color: var(--teal); font-weight: 600; }
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.950L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.910-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.230 8.230 0 0 1-4.19-1.150l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13 7l4 4"/></symbol>
+  <symbol id="i-design" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/><path d="M13 7h6M7 13v6"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3V9Z"/></symbol>
+  <symbol id="i-motion" viewBox="0 0 24 24"><circle cx="15" cy="12" r="5"/><path d="M3 8h5M2 12h5M3 16h5"/></symbol>
+  <symbol id="i-funnel" viewBox="0 0 24 24"><path d="M3 4h18l-7 8v6l-4 2v-8L3 4Z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4V8Z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 6.1A9.7 9.7 0 0 1 12 6c5 0 9 6 9 6a16 16 0 0 1-2.6 3.2M6.6 7.6C4.3 9.2 3 12 3 12s4 6 9 6a8.6 8.6 0 0 0 4-1"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
 </svg>
-
-<div dir="rtl" lang="ar">
 
 <header>
   <div class="wrap">
@@ -203,13 +267,13 @@ footer a { color: var(--teal); font-weight: 600; }
 <div class="hero">
   <div class="wrap">
     <div class="hero-text">
-      <span class="tag"><i></i>تسويق متخصص للعيادات البيطرية</span>
-      <h1>زوّد <mark>حجوزات عيادتك</mark> البيطرية بسيستم إعلانات واضح على فيسبوك وإنستجرام</h1>
-      <p class="lead">أنا دكتور أحمد الصادق، طبيب بيطري. بصمّم وبدير إعلانات Meta لعيادتك عشان توصل لأصحاب الحيوانات الأليفة اللي حواليك فعلًا، وتتحول الرسايل لحجوزات حقيقية.</p>
-      <div class="channels"><span class="latin">Meta</span><span class="latin">Facebook</span><span class="latin">Instagram</span><span>رسايل واتساب وماسنجر</span></div>
+      <span class="tag"><i></i>تسويق متكامل للعيادات البيطرية</span>
+      <h1>كل تسويق عيادتك البيطرية <mark>في مكان واحد</mark>، من المحتوى لحد الحجز</h1>
+      <p class="lead">أنا دكتور أحمد الصادق، طبيب بيطري. بكتب محتوى عيادتك، وبصمّم، وبعمل المونتاج والموشن جرافيك، وبدير إعلانات Meta وجوجل، عشان تظهر انت كدكتور قدام أصحاب الحيوانات اللي حواليك، وتتحول الرسايل لحجوزات.</p>
+      <div class="channels"><span>محتوى وسكريبتات</span><span>تصميم سوشيال ميديا</span><span>مونتاج فيديو</span><span>موشن جرافيك</span><span>إعلانات <span class="latin">Meta</span></span><span>جوجل وخرائط جوجل</span></div>
       <div class="hero-cta">
         <a class="btn-wa big wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>يلا شخّص عيادتك مجانًا</a>
-        <small>كشف مجاني على صفحتك وإعلاناتك، ورد خلال 24 ساعة</small>
+        <small>كشف مجاني على صفحتك وظهورك، ورد خلال 24 ساعة</small>
       </div>
     </div>
     <div class="portrait">
@@ -225,7 +289,7 @@ footer a { color: var(--teal); font-weight: 600; }
     <div class="stat"><b>717</b><span>محادثة رسايل بدأت من الإعلانات</span></div>
     <div class="stat"><b>1.74 ج.م</b><span>أقل تكلفة للمحادثة الواحدة</span></div>
     <div class="stat"><b>446</b><span>عملية شراء لمتاجر فاشون أونلاين</span></div>
-    <div class="stat"><b>4 سنين</b><span>شغل جوه العيادات البيطرية</span></div>
+    <div class="stat"><b>8 خدمات</b><span>تسويق في مكان واحد</span></div>
   </div>
 </div>
 
@@ -233,16 +297,92 @@ footer a { color: var(--teal); font-weight: 600; }
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">الأعراض</span>
-      <h2>لو عيادتك عندها عرض من دول، يبقى محتاجة كشف</h2>
+      <h2>كل يوم عيادتك مش ظاهرة فيه، فيه حجوزات بتروح لعيادة تانية</h2>
     </div>
     <div class="symptoms">
-      <div class="symptom"><div class="ico">!</div><h3>متابعين كتير وحجوزات قليلة</h3><p>الصفحة شغالة والبوستات بتاخد لايكات، بس العيادة مش بتتملي.</p></div>
-      <div class="symptom"><div class="ico">؟</div><h3>رسايل بتسأل عن السعر وتختفي</h3><p>العميل بيسأل "الكشف بكام؟" ومش بيرجع تاني، ومفيش طريقة واضحة تحوّله لحجز.</p></div>
-      <div class="symptom"><div class="ico">ج.م</div><h3>فلوس بتتصرف على "ترويج" من غير نتيجة</h3><p>زرار "ترويج المنشور" بيصرف الميزانية على ناس مش مهتمة ومش في منطقتك.</p></div>
+      <div class="symptom"><div class="ico"><svg class="i"><use href="#i-eye-off"/></svg></div><h3>مش ظاهر يعني مش موجود</h3><p>صاحب الحيوان بيدوّر على فيسبوك وإنستجرام وخرائط جوجل قبل ما يختار عيادة. لو ملقاكش، هيحجز عند اللي ظاهر قدامه.</p></div>
+      <div class="symptom"><div class="ico"><svg class="i"><use href="#i-heart"/></svg></div><h3>الناس بتحجز عند الدكتور اللي تعرفه</h3><p>لما يشوفك بتشرح وبتنصح، بيثق فيك قبل ما يدخل العيادة. بوستات العروض لوحدها مش بتبني الثقة دي.</p></div>
+      <div class="symptom"><div class="ico"><svg class="i"><use href="#i-clock"/></svg></div><h3>كل شهر تأخير، منافسك بيسبقك</h3><p>العيادة اللي تبدأ تظهر الأول هي اللي بتكسب جمهور المنطقة، وبعدها بيبقى أصعب وأغلى إنك ترجّعه.</p></div>
     </div>
     <div class="diagnosis">
-      <p>التشخيص في الغالب: الإعلان مش موجّه صح، والرسالة مش بتكلم صاحب الحيوان بلغته.</p>
+      <p>العلاج: تظهر انت كدكتور بمحتوى صح وإعلان يوصل للناس اللي حواليك. <span>وابدأ النهارده، أحسن من بكرة.</span></p>
       <a class="btn-wa wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>يلا شخّص عيادتك مجانًا</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">الخدمات</span>
+      <h2>كل اللي عيادتك محتاجاه عشان تظهر وتتحجز</h2>
+      <p>من أول فكرة البوست لحد ما صاحب الحيوان يبعت على الواتساب ويحجز.</p>
+    </div>
+
+    <div class="svc-group">
+      <h3 class="g-label">المحتوى</h3>
+      <div class="svc-cards c4">
+        <div class="svc"><div class="ico"><svg class="i"><use href="#i-pen"/></svg></div><h3>كتابة المحتوى والسكريبتات</h3><p>محتوى طبي توعوي وتعريفي بالعيادة والدكتور، وسكريبتات فيديوهات. صح طبيًا لأني دكتور بيطري، وبلغة يفهمها صاحب الحيوان.</p></div>
+        <div class="svc"><div class="ico"><svg class="i"><use href="#i-design"/></svg></div><h3>تصميم السوشيال ميديا</h3><p>بوستات وستوريز وكاروسيل بهوية ثابتة لعيادتك، تبان احترافية وتتعرف من أول نظرة.</p></div>
+        <div class="svc"><div class="ico"><svg class="i"><use href="#i-video"/></svg></div><h3>مونتاج الفيديو</h3><p>ريلز وفيديوهات قصيرة من تصويرك، بإيقاع وترجمة ونص على الشاشة يشد المشاهد لحد الآخر.</p></div>
+        <div class="svc"><div class="ico"><svg class="i"><use href="#i-motion"/></svg></div><h3>فيديوهات موشن جرافيك</h3><p>لو مش حابب تصوّر نفسك، بعملك فيديوهات موشن جرافيك تشرح الخدمة أو المعلومة الطبية بشكل بسيط وجذاب.</p></div>
+      </div>
+    </div>
+
+    <div class="svc-row2">
+      <div class="svc-group ads">
+        <h3 class="g-label">الاستراتيجية والإعلانات</h3>
+        <div class="svc-cards c2">
+          <div class="svc"><div class="ico"><svg class="i"><use href="#i-funnel"/></svg></div><h3>تحليل الـ Funnel ورحلة العميل</h3><span class="latin-sub">Funnel &amp; Customer Journey</span><p>بنرسم الطريق من أول ما صاحب الحيوان يشوفك لحد ما يحجز، ونقفل كل نقطة بيضيع فيها.</p></div>
+          <div class="svc"><div class="ico"><svg class="i"><use href="#i-target"/></svg></div><h3>إعلانات فيسبوك وإنستجرام</h3><span class="latin-sub">Meta Ads</span><p>مش بموّل أي بوست وخلاص. بموّل فيديو أو تصميم أو إعلان متعمل صح، وبستهدف الجمهور المناسب لعيادتك في منطقتك.</p></div>
+        </div>
+      </div>
+      <div class="svc-group google">
+        <h3 class="g-label">جوجل</h3>
+        <div class="svc-cards c2">
+          <div class="svc"><div class="ico"><svg class="i"><use href="#i-search"/></svg></div><h3>إعلانات جوجل</h3><span class="latin-sub">Google Ads</span><p>تظهر في أول النتايج لما حد يدوّر على "عيادة بيطرية قريبة مني" أو على خدمة بتقدمها.</p></div>
+          <div class="svc"><div class="ico"><svg class="i"><use href="#i-pin"/></svg></div><h3>تحسين الظهور على خرائط جوجل</h3><span class="latin-sub">Google Maps</span><p>بظبط صفحة عيادتك على الخرائط بالصور والمواعيد والتقييمات، عشان تطلع للناس اللي حواليك.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="soon">
+      <div class="ico"><svg class="i"><use href="#i-camera"/></svg></div>
+      <div>
+        <h3>تصوير فيديو وفوتوغرافيا في العيادة <em>قريبًا</em></h3>
+        <p>جلسات تصوير للعيادة والفريق والحالات، عشان يبقى عندك محتوى حقيقي من جوه عيادتك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relax">
+  <div class="wrap">
+    <div class="relax-text">
+      <span class="eyebrow">ريّح دماغك</span>
+      <h2>انت ركّز مع الحالات، والتسويق كله عليّا</h2>
+      <p>مش محتاج تدوّر على مصمم ومونتير وكاتب محتوى وحد للإعلانات، وتنسّق بينهم وتلاحقهم. كل احتياجات عيادتك الدعائية هتلاقيها عندي في مكان واحد، من غير وش ولا وجع دماغ.</p>
+      <div><a class="btn-wa wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>يلا شخّص عيادتك مجانًا</a></div>
+    </div>
+    <div class="compare">
+      <div class="col without">
+        <h3>من غيري</h3>
+        <ul>
+          <li>4 أشخاص مختلفين تتابعهم</li>
+          <li>كل واحد شغال لوحده من غير خطة</li>
+          <li>محتوى طبي مكتوب غلط أو مترجم</li>
+          <li>فلوس على ترويج بوستات من غير نتيجة</li>
+        </ul>
+      </div>
+      <div class="col with">
+        <h3>معايا</h3>
+        <ul>
+          <li>شخص واحد تكلمه على الواتساب</li>
+          <li>خطة واحدة من المحتوى للإعلان</li>
+          <li>محتوى بيكتبه دكتور بيطري</li>
+          <li>تقرير بالأرقام: رسايل وتكلفة وحجوزات</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -255,11 +395,11 @@ footer a { color: var(--teal); font-weight: 600; }
       <p>خطوات ثابتة وواضحة، وانت عارف كل جنيه راح فين وجاب إيه.</p>
     </div>
     <ol class="steps">
-      <li><h3>كشف مجاني</h3><p>بشوف صفحتك وإعلاناتك القديمة والمنطقة اللي بتخدمها، وبقولك المشكلة فين بالظبط.</p></li>
-      <li><h3>العرض والرسالة</h3><p>نحدد الخدمة اللي هنعلن عنها (تطعيمات، كشف، جرومنج...) بعرض يخلّي صاحب الحيوان يتحرك.</p></li>
-      <li><h3>تصميم الإعلان</h3><p>تصميم وكلام إعلان يجذب أصحاب حيوانات حقيقيين، مش لايكات وخلاص.</p></li>
-      <li><h3>استهداف دقيق</h3><p>حملات Meta موجهة لمنطقتك وللمهتمين فعلًا، بتبعت الناس على الواتساب أو الماسنجر مباشرة.</p></li>
-      <li><h3>متابعة وتحسين</h3><p>تقرير بعدد الرسايل وتكلفة كل محادثة، ونطوّر الإعلان اللي شغال ونوقف اللي مش جايب.</p></li>
+      <li><h3>كشف مجاني</h3><p>بشوف صفحتك وظهورك على فيسبوك وإنستجرام وخرائط جوجل، وأقولك الحجوزات بتضيع منك فين.</p></li>
+      <li><h3>تحليل رحلة العميل</h3><p>من أول ما صاحب الحيوان يشوفك لحد ما يحجز، وبنحدد الخدمة والعرض اللي هنبدأ بيهم.</p></li>
+      <li><h3>المحتوى</h3><p>سكريبتات ومحتوى طبي، تصاميم، وفيديوهات من تصويرك أو موشن جرافيك.</p></li>
+      <li><h3>الإعلانات</h3><p>تمويل المحتوى اللي متعمل صح على Meta وجوجل، واستهداف الناس اللي حواليك والمهتمين فعلًا.</p></li>
+      <li><h3>متابعة وتحسين</h3><p>تقرير بعدد الرسايل وتكلفة كل محادثة، ونطوّر اللي شغال ونوقف اللي مش جايب.</p></li>
     </ol>
   </div>
 </section>
@@ -287,13 +427,13 @@ footer a { color: var(--teal); font-weight: 600; }
     <div class="about-photo"><img src="img/me.webp" alt="دكتور أحمد الصادق" loading="lazy"></div>
     <div class="about-text">
       <span class="eyebrow">مين أنا</span>
-      <h2>دكتور بيطري فاهم العيادة من جوه، ومتخصص في إعلاناتها</h2>
+      <h2>دكتور بيطري فاهم العيادة من جوه، وبيسوّق لها من الألف للياء</h2>
       <p>أنا دكتور أحمد الصادق، طبيب بيطري، اشتغلت 4 سنين في العيادات البيطرية وعارف صاحب الحيوان بيفكر إزاي، بيقلق من إيه، وإيه اللي بيخليه يختار عيادة دون التانية.</p>
-      <p>من 6 شهور بدأت أشتغل في الإعلانات الممولة، وساعدت مجموعة من العيادات البيطرية تزوّد الحجوزات من خلال إعلانات متصممة صح بتجيب عملاء حقيقيين.</p>
+      <p>من 6 شهور بدأت في الإعلانات الممولة، وساعدت مجموعة من العيادات البيطرية تزوّد الحجوزات. وبعدها اتدربت على كتابة المحتوى والتصميم والمونتاج والموشن جرافيك، عشان أقدّم لعيادتك كل اللي محتاجاه في مكان واحد.</p>
       <div class="creds">
         <div><b>4 سنين</b><span>في العيادات البيطرية</span></div>
-        <div><b>6 شهور</b><span>في إعلانات Meta</span></div>
-        <div><b>+700</b><span>محادثة لعملائي</span></div>
+        <div><b>6 شهور</b><span>في الإعلانات الممولة</span></div>
+        <div><b>8 خدمات</b><span>في مكان واحد</span></div>
       </div>
       <div><a class="btn-wa wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>يلا شخّص عيادتك مجانًا</a></div>
     </div>
@@ -303,8 +443,8 @@ footer a { color: var(--teal); font-weight: 600; }
 <section class="final">
   <div class="wrap">
     <div class="final-box">
-      <h2>ابدأ بكشف مجاني لعيادتك النهارده</h2>
-      <p>ابعتلي على الواتساب اسم العيادة ولينك الصفحة، وهرجعلك بتشخيص واضح وخطة إعلانات مناسبة لميزانيتك.</p>
+      <h2>ابدأ النهارده، أحسن من بكرة</h2>
+      <p>كل يوم من غير ظهور فيه حجوزات بتروح لغيرك. ابعتلي على الواتساب اسم العيادة ولينك الصفحة، وهرجعلك بكشف مجاني وخطة مناسبة لميزانيتك.</p>
       <a class="btn-wa big wa" href="https://wa.me/201207712586" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>يلا شخّص عيادتك مجانًا</a>
       <span class="phone">01207712586</span>
     </div>
@@ -321,8 +461,6 @@ footer a { color: var(--teal); font-weight: 600; }
 </footer>
 
 <a class="fab wa" href="https://wa.me/201207712586" target="_blank" rel="noopener" aria-label="كلمني على واتساب"><svg><use href="#wa"/></svg><span class="lbl">كلمني واتساب</span></a>
-
-</div>
 
 <script>
   // Prefill the WhatsApp message on every CTA
